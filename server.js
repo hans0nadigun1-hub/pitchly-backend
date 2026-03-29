@@ -107,4 +107,5 @@ function starToNumber(s) {
 app.get('/health', (req, res) => res.json({ status: 'healthy', service: 'Pitchly Backend' }));
 app.get('/', (req, res) => res.json({ status: 'ok', service: 'Pitchly Backend v1.0' }));
 
-app.listen(PORT, () => console.log(`Pitchly Backend running on port ${PORT}`));
+const port = process.env.PORT || 3000;
+app.listen(port, '0.0.0.0', () => console.log(`Pitchly Backend running on port ${port}`));
